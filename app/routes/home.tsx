@@ -1,5 +1,7 @@
+import Sidebar from "~/components/Sideboard/Sidebar";
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import Daskboard from "~/components/Daskboard/Daskboard";
+import { Outlet } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,5 +11,10 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <Welcome />;
+  return (
+  <main className="grid p-4 gap-4 grid-cols-[279px_1fr]">
+      <Sidebar />
+      <Outlet />
+    </main>
+  )
 }
